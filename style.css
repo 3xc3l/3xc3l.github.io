@@ -1,0 +1,87 @@
+/* write your code here */
+body {
+  background-image: url('https://24wallpapers.com/Content/Images/WallpaperImages/wi138bf3ffa0e-3d9d-40ff-af36-a6c351d3fadf2.jpg');
+}
+
+#Home_page {
+    color: White;
+    text-align: center;
+    font-style: italic;
+    padding-top: 120px;
+}
+
+#continue {
+    padding: 40px 0px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+#continue a {
+    background: maroon;
+    color: white;
+    border: 1px solid red;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 14px;
+    text-decoration: none;
+}
+
+#continue a:hover {
+    background: white;
+    border: 1px solid red;
+    color: red;
+}
+
+h1 {
+    color: white;
+    font-style: italic;
+    text-align: center;
+    padding-top: 150px;
+}
+
+h2 {
+    color: white;
+    font-style: italic;
+    text-align: center;
+}
+
+#names {
+    text-align: center;
+}
+
+#info {
+    text-align: center;
+}
+
+#numbs {
+    text-align: center;
+}
+
+#birth {
+    text-align: center;
+}
+
+#age {
+    text-align: center;
+}
+
+#gender {
+    text-align: center;
+}
+
+#bio {
+    text-align: center;
+}
+
+#text {
+    font-weight: bold;
+    padding-top: 25px;
+}
+
+#img {
+    width: 350px;
+    height: 350px;
+    padding-top: 10px;
+    padding-left: 495px;
+}

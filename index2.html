@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div>
+            <h2>Please enter your full name</h2>
+                <form id = 'names' onsubmit='restrictions(event)' action = ''>
+                    <input id = 'first_name' type = 'text' placeholder = 'First Name'>
+                    <input id = 'last_name' type = "text" placeholder= 'Last Name'>
+                    <button type='submit'>Submit</button>
+                </form>
+            <h2>Please enter your email & password</h2>
+            <form id = 'info' onsubmit="passW(event)" action = ''>
+                <input type = 'text' placeholder = 'email'>
+                <input id = "pass" type = "password" placeholder = 'password'><br><br>
+                <button type='submit'>Submit</button>
+            </form>
+            <h2>Please enter your phone number</h2>
+            <form id = 'numbs' onsubmit='numbRestrictions(event)' action = ''>
+                <input id = 'numb' type = 'text' placeholder = 'number'>
+                <button type='submit'>Submit</button>
+            </form>
+            <h2>Date of birth</h2>
+            <form id = 'birth' onsubmit='births(event)' action = ''>
+                <input id = 'birth1' type = 'text' placeholder = 'year'>
+                <input id = 'birth2' type = 'text' placeholder = 'month'>
+                <input id = 'birth3' type = 'text' placeholder = 'day'>
+                <button type='submit'>Submit</button>
+            </form>
+            <h2>Age</h2>
+            <form id = 'age' class = 'age2' onsubmit='umur(event)' action = ''>
+                <input id = 'aged' type = 'text' placeholder = 'age'>
+                <button type='submit'>Submit</button>
+            </form>
+            <h2>Gender</h2>
+                    <form id = 'gender' action = ''>
+                        <input type = "radio" name = "gender">
+                        <label for = "radio"> <strong>Male</strong></label>
+                        <input type = "radio" name = "gender">
+                        <label for = "radio"> <strong>Female</strong></label>
+                        <input type = "radio" name = "gender">
+                        <label for = "radio"> <strong>Alien</strong></label>
+                    </form>
+            <h2>Your bio</h2>
+            <div id = 'bio'>
+            <textarea rows = '10' cols = '50' placeholder = 'about yourself'></textarea>
+            <p id = 'text'>By pressing "Find jodoh" you agree with our terms of service where<br>
+                if you don't get a match we are not responsible for any heart breaks.</p>
+                <div id = 'continue'>
+                    <a href = 'index3.html'>Find Jodoh</a>
+            </div>
+        </div>
+        <script>
+            function restrictions(event) {
+                event.preventDefault()
+                let res = document.getElementById('first_name')
+                let first_name = res.value
+                for (let i = 0; i < first_name.length; i++) {
+                    if (first_name[i].toLowerCase() === first_name[i].toUpperCase()) {
+                        alert('Letters Only')
+                        break
+                    }
+                }
+                event.preventDefault()
+                let res2 = document.getElementById('last_name')
+                let last_name = res2.value
+                for (let i = 0; i < last_name.length; i++) {
+                    if (last_name[i].toLowerCase() === last_name[i].toUpperCase()) {
+                        alert('Letters Only')
+                        break
+                    } 
+                }
+            }
+
+            function passW(event) {
+                event.preventDefault()
+                let a = document.getElementById('pass')
+                let pass = a.value
+                for (let j = 0; j < pass.length; j++) {
+                    if (pass.length < 8) {
+                        alert('Minimun characters 8')
+                        break
+                    } else if (pass.length > 11) {
+                        alert('Maximum characters 11')
+                        break
+                    }
+                }
+            }
+
+            function numbRestrictions(event) {
+                event.preventDefault()
+                let b = document.getElementById('numb')
+                let numb = b.value
+                for (let k = 0; k < numb.length; k++) {
+                    if (numb[k].toLowerCase() != numb[k].toUpperCase()) {
+                        alert('Numbers Only')
+                        break
+                    }
+                    else if (numb.length < 7) {
+                        alert('Minimum characters 7')
+                        break
+                    } else if (numb.length > 14) {
+                        alert("You've reached the maximum characters")
+                        break
+                    }
+                }
+            }
+
+            function births(event) {
+                event.preventDefault()
+                let c = document.getElementById('birth1')
+                let birth1 = c.value
+                for (let m = 0; m < birth1.length; m++) {
+                    if (birth1[m].toLowerCase() != birth1[m].toUpperCase()) {
+                        alert('Numbers Only')
+                        break
+                    } if (birth1.length > 4) {
+                        alert('Maximum characters for YEAR is 4')
+                        break
+                    }
+                }
+                event.preventDefault()
+                let d = document.getElementById('birth2')
+                let birth2 = d.value
+                for (let m = 0; m < birth2.length; m++) {
+                    if (birth2[m].toLowerCase() != birth2[m].toUpperCase()) {
+                        alert('Numbers Only')
+                        break
+                    } if (birth2.length > 2) {
+                        alert('Maximum characters for MONTH is 2')
+                        break
+                    }
+                }
+                event.preventDefault()
+                let e = document.getElementById('birth3')
+                let birth3 = e.value
+                for (let m = 0; m < birth3.length; m++) {
+                    if (birth3[m].toLowerCase() != birth3[m].toUpperCase()) {
+                        alert('Numbers Only')
+                        break
+                    } if (birth3.length > 2) {
+                        alert('Maximum characters for DAY is 2')
+                        break
+                    }
+                }
+            }
+
+            function umur(event) {
+                event.preventDefault()
+                let f = document.getElementById('aged')
+                let aged = f.value
+                for (let m = 0; m < aged; m++) {
+                    if (aged < 18) {
+                        alert('You need to be more than 18 to register')
+                        break
+                    }
+                }
+                event.preventDefault()
+                let g = document.getElementById('age')
+                let age = g.value
+                for (let m = 0; m < aged.length; m++) {
+                    if (aged[m].toLowerCase() != aged[m].toUpperCase()) {
+                        alert('Numbers Only')
+                        break
+                    }
+                }
+                if (aged.length > 2) {
+                    alert('Maximum characters 2')
+                } else {
+                    alert('You cannot leave this field empty')
+                }
+            }
+        </script>
+    </body>
+</html>
